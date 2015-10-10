@@ -57,8 +57,6 @@ public class TEST2 {
                      sb.append(String.format("%02X%s", MACaddr[i], "-"));
             }
             System.out.println(sb.toString());
-            
-            
 
         }catch (UnknownHostException e) {
 		e.printStackTrace();
