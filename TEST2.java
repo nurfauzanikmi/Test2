@@ -22,33 +22,15 @@ public class TEST2 {
 	InetAddress ip;
 	try 
         {	
+            //get NIC information
             ip = InetAddress.getLocalHost();
             System.out.println(" IP address : " + Arrays.toString(ip.getAddress()));
             System.out.println(" Host address : " + ip.getHostAddress());
             System.out.println(" Host Name : " + ip.getHostName());
-            //System.out.println(" Host Name : " + ip.getCanonicalHostName());            
-
-           // NetworkInterface network = NetworkInterface.getByInetAddress(ip);
-
-          /*  byte[] mac = network.getHardwareAddress();
-
-            System.out.print("Current MAC address : ");
-
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < mac.length; i++) {
-                    sb.append(String.format("%02X%s", mac[i], (i < mac.length - 1) ? "-" : ""));		
-            }
-            System.out.println(sb.toString());*/
-			
-	} catch (UnknownHostException e) {
+            
+        }catch (UnknownHostException e) {
 		
 		e.printStackTrace();
-		
-	/*} catch (SocketException e){
-			
-		e.printStackTrace();
-			
-	}*/
-	    
+        }
    }
 }
