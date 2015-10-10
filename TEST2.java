@@ -60,7 +60,7 @@ public class TEST2 {
         }catch (UnknownHostException e) {
 		e.printStackTrace();
         } catch (SocketException ex) {
-            Logger.getLogger(TEST2.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
    }
 }
