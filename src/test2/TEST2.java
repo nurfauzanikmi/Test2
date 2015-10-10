@@ -58,22 +58,7 @@ public class TEST2 {
             }
             System.out.println(sb.toString());
             
-            //First Request - IPV6
-            /*
-            System.out.println(System.getProperty("java.home"));
-            System.setProperty("java.net.preferIPv6Addresses", "true");
-            System.out.println(System.getProperty("java.net.preferIPv6Addresses"));
-           */
-            //System.out.println("Check IP address version :" + ip.isLinkLocalAddress());
             
-            InetAddress[] addr = InetAddress.getAllByName(ip.getHostName());
-            for (InetAddress ipv6 : addr) {
-                if (ipv6 instanceof Inet6Address) {
-                    System.out.println("ipv6 address is " + ipv6.getHostAddress());
-                }
-                else
-                    System.out.println("ipv4 address is " + ipv6.getHostAddress());
-            }
 
         }catch (UnknownHostException e) {
 		e.printStackTrace();
