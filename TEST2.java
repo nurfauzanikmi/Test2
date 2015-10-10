@@ -15,6 +15,8 @@ import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TEST2 {
     public static void main(String[] args){
@@ -24,13 +26,30 @@ public class TEST2 {
         {	
             //get NIC information
             ip = InetAddress.getLocalHost();
-            System.out.println(" IP address : " + Arrays.toString(ip.getAddress()));
-            System.out.println(" Host address : " + ip.getHostAddress());
-            System.out.println(" Host Name : " + ip.getHostName());
+            System.out.println("IP address : " + Arrays.toString(ip.getAddress()));
+            System.out.println("Host address : " + ip.getHostAddress());
+            System.out.println("Host Name : " + ip.getHostName());
+            
+            //get MAC Address
+            NetworkInterface nic = NetworkInterface.getByInetAddress(ip);
+            byte[] MACaddr = nic.getHardwareAddress();
+            //print out mac address
+            System.out.print("Current MAC address : ");
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < MACaddr.length; i++) {
+                if(i < MACaddr.length - 1)
+                    sb.append(String.format("%02X%s", MACaddr[i], "-"));		
+                else
+                     sb.append(String.format("%02X%s", MACaddr[i], "-"));
+            }
+            System.out.println(sb.toString());
+            
+            
             
         }catch (UnknownHostException e) {
-		
 		e.printStackTrace();
+        } catch (SocketException ex) {
+            Logger.getLogger(TEST2.class.getName()).log(Level.SEVERE, null, ex);
         }
    }
 }
