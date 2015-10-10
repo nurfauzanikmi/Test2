@@ -14,6 +14,7 @@ import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.UnknownHostException;
+import java.util.Arrays;
 
 public class TEST2 {
     public static void main(String[] args){
@@ -22,15 +23,10 @@ public class TEST2 {
 	try 
         {	
             ip = InetAddress.getLocalHost();
-            System.out.println(" IP address : " + ip.getAddress());
+            System.out.println(" IP address : " + Arrays.toString(ip.getAddress()));
             System.out.println(" Host address : " + ip.getHostAddress());
-            
-            getHostName()
-public String getCanonicalHostName()
-public byte[] getAddress()
-public String getHostAddress()
-
-            
+            System.out.println(" Host Name : " + ip.getHostName());
+            //System.out.println(" Host Name : " + ip.getCanonicalHostName());            
 
            // NetworkInterface network = NetworkInterface.getByInetAddress(ip);
 
@@ -48,11 +44,11 @@ public String getHostAddress()
 		
 		e.printStackTrace();
 		
-	} catch (SocketException e){
+	/*} catch (SocketException e){
 			
 		e.printStackTrace();
 			
-	}
+	}*/
 	    
    }
 }
