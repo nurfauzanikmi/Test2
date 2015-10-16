@@ -61,7 +61,7 @@ public class TEST2 {
         }catch (UnknownHostException e) {
 		e.printStackTrace();
         } catch (SocketException ex) {
-            ex.printStackTrace();
+            ex.printStackTrace(); 
         }
    }
 }
